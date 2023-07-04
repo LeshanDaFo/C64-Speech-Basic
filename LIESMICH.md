@@ -1,0 +1,113 @@
+<body>
+
+## SPEECH BASIC
+
+### EINE BASIC ERWEITERUNG FÜR DEN C64
+
+Diese Basic-Erweiterung wurde ursprünglich von Kristian Köhntopp und Daniel Diezemann für den Commodore C64 geschrieben.<br />
+Diese Basic-Erweiterung stellt 23 neue Befehle bereit.<br />
+<br />
+Dieser Quellcode basiert auf den vorhandenen Disk-Images,<br />
+welche 1986 bei Markt & Technik in der Computerzeitschrift „64'er 86/10“ erschienen sind.
+<br />
+<br />
+An dieser Stelle möchte ich mich ganz besonders bei Kristian für dessen Zustimmung, diesen Quellcode zu veröffentlichen, bedanken.<br />
+Eine kurze Geschichte zur Entstehung von Speech Basic, findest du in seinem Blog:<br />
+https://blog.koehntopp.info/2006/10/26/mut-64er-10-86.html
+<br />
+<br />
+„Speech-Basic besteht aus einer kleinen Schaltung, nämlich einem 2-Bit-Tondigitalisierer und einer 4 KByte langen Basic-Erweiterung. Beides zusammen ermöglicht das einfache und komfortable Arbeiten mit Sprache und Musik am Commodore 64. *)<br />
+
+
+### Liste der Befehle nach Gruppe
+
+<div align="left">
+<table border="0" cellpadding="6" width="600">
+ <tr>
+  <th>a</th>
+  <th>Grundbefehle zur Steuerung der Erweiterung</th>
+  <th>RESET,BASIC,HELP</th>
+ </tr><tr>
+ <tr>
+  <th>b</th>
+  <th>Utilities und Diskettenbefehle</th>
+  <th>KEY,MEM,DISK,DIR,BLOAD,BSAVE</th>
+ </tr><tr>
+  <tr>
+  <th>c</th>
+  <th>Tonbefehle</th>
+  <th>HEAR,RECORD,PLAY,VOLDEF,COLDEF</th>
+ </tr><tr>
+  <tr>
+  <th>d</th>
+  <th>Erweiterte Tonbefehle</th>
+  <th>BLOCK,MAP,HIMEM,PAUSE,EXEC</th>
+ </tr><tr>
+  <tr>
+  <th>e</th>
+  <th>Sonstige Befehle</th>
+  <th>BHEX,DEZ,SCREEN,MON</th>
+ </tr><tr>
+</table>
+</div>
+
+
+Zusätzliche Exec-Befehle:<br />
+p,s,w,v,c,#
+<br />
+<br />
+
+Details zur Digitalisierungsschaltung und detailliertere Informationen zu den Befehlen findest du unter: https://archive.org/details/64er_1986_10/page/n63/mode/2up <br />
+und im C64-Wiki: https://www.c64-wiki.de/wiki/Speech_Basic <br />
+
+
+### SPEECH BASIC Screenshots<br />
+<div align="left">
+<table border="0" cellpadding="6" width="600">
+ <tr>
+  <td align="center"><img src="https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/43fb01ff-efc6-4a49-ab16-34d2bddc0b40" width="320" height="240"></td>
+  <td align="center"><img src="https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/03496944-8867-43a6-9065-67515f566301" width="320" height="240"></td>
+ </tr>
+</table>
+</div>
+
+### Beispiel-Screenshots eines Digitalisierers<br />
+<div align="left">
+<table border="0" cellpadding="6">
+ <tr>
+  <td align="center"><img src="https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/2da24f03-726e-4021-90b5-a5ffe7838b4f" width="440" height="180"></td>
+  <td align="center"><img src="https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/753bb5eb-17fe-4ba1-b4a7-957597958590" width="200" height="180"></td>
+ </tr>
+</table>
+</div>
+!! Dieses Layout ist nur ein Beispiel. Wenn du planst, deinen eigenen Digitalisierer zu bauen, solltest du den Beschreibungen in den entsprechenden Dokumenten folgen. !!
+<br />
+<br />
+
+### Informationen zum Quellcode:
+
+Beim Erstellen und Dokumentieren des Quellcodes habe ich einige kleine Fehler und nicht notwendige Codeteile gefunden.<br />
+
+1. Der BLOAD-Befehl vergleicht die Ladeadresse nicht mit der Basic-Startadresse, daher ist es möglich, das Speech-Basic-Hauptprogramm zu überschreiben.<br />
+2. Die Unterroutine „checkparam“, die für DIR, DISK, BLOAD und auch BSAVE verwendet wird, prüft nicht, ob das angegebene Gerät existiert. Wird eine Gerätenummer eingegeben, die nicht existiert, friert der Rechner ein.<br />
+3. Der Befehl PAUSE weist einen Fehler auf, der manchmal dazu führt, dass 255 Bytes vom Zählwert übersprungen werden.
+<br />
+<br />
+Ich habe 2 Versionen veröffentlicht.
+
+#### SpeechBasicV1.asm ist der Originalcode.
+#### SpeechBasicV1.1.asm ist die Version, in der ich diese Fehler korrigiert und einige kleine Codeoptimierungen vorgenommen habe.<br />
+
+Ich habe dem Quellcode so viele Informationen und Kommentare wie möglich hinzugefügt, damit er leichter lesbar und verständlich ist.<br />
+Die Dokumentation ist vielleicht nicht perfekt, aber ich bin auch nicht der Autor dieses Programms.<br />
+Ich denke aber, es ist ein guter Anfang.<br />
+
+<br />
+Anmerkungen:
+<br />
+*)Auszug aus der Zeitschrifft 64'er 86/10 von Markt & Technik
+</body>
+
+
+
+
