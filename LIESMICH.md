@@ -65,8 +65,8 @@ und im C64-Wiki: https://www.c64-wiki.de/wiki/Speech_Basic <br />
 <div align="left">
 <table border="0" cellpadding="6" width="600">
  <tr>
-  <td align="center"><img src="https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/43fb01ff-efc6-4a49-ab16-34d2bddc0b40" width="320" height="240"></td>
-  <td align="center"><img src="https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/03496944-8867-43a6-9065-67515f566301" width="320" height="240"></td>
+  <td align="center"><img src="https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/e5a720d4-59c6-47f7-a286-d7bd7b8e06c7" width="320" height="240"></td>
+  <td align="center"><img src="https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/e5bc1f5f-b2b6-4cd0-ac3a-545b3b69063f" width="320" height="240"></td>
  </tr>
 </table>
 </div>
@@ -75,8 +75,8 @@ und im C64-Wiki: https://www.c64-wiki.de/wiki/Speech_Basic <br />
 <div align="left">
 <table border="0" cellpadding="6">
  <tr>
-  <td align="center"><img src="https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/2da24f03-726e-4021-90b5-a5ffe7838b4f" width="440" height="180"></td>
-  <td align="center"><img src="https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/753bb5eb-17fe-4ba1-b4a7-957597958590" width="200" height="180"></td>
+  <td align="center"><img src="https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/67fb171c-8fec-40c8-8c68-34f8ae4ab02e" width="440" height="180"></td>
+  <td align="center"><img src="https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/1ce12357-e1bb-4ff1-b7b6-869174333874" width="200" height="180"></td>
  </tr>
 </table>
 </div>
