@@ -2109,7 +2109,7 @@ L14CF   STX CBM_TXTPTR                  ; save low byte
         BEQ +                           ; command found, get cmd address and execute
         DEY                             ; else decrement index
         BPL -
---      LDA txtptr_buf+1                     ; put 2 zeros to the textptr                     
+--      LDA txtptr_buf+1                ; put 2 zeros to the textptr                     
         STA CBM_TXTPTR+1
         LDA txtptr_buf
         STA CBM_TXTPTR
