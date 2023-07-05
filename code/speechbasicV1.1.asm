@@ -31,7 +31,7 @@
 ;
 ; 2. The PAUSE command has a bug, sometimes skipping 255 bytes from the count value
 ; This error is now corrected
-
+; changed the version from 2.7 to 2.8
 ; ----------------------------------------------
 ; - used system addresses ----------------------
 ; ----------------------------------------------
@@ -541,7 +541,7 @@ PRNT_PWRONMSG
 ; ----------------------------------------------
 OWN_PWRONMSG
         !by $93,$08,$0e,$0d
-        !pet "    **** C64 Speech System v2.7 ****"
+        !pet "    **** C64 Speech System v2.8 ****"
         !by $00
 ---------------------------------
 OWN_CMDS
