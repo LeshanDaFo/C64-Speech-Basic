@@ -1,7 +1,7 @@
 ; ###############################################################
 ; #                                                             #
 ; #  C64 SPEECH-BASIC C64 SOURCE CODE                           #
-; #  Version 1.1 (2023.07.04)                                   #
+; #  Version 2.8 (2023.07.04)                                   #
 ; #  Copyright (c) 2023 Claus Schlereth                         #
 ; #                                                             #
 ; #  This version of the source code is under MIT License       #
@@ -18,8 +18,8 @@
 ; ###############################################################
 ;
 ; History:
-; V1.0 =        Initial version
-; V1.1 =        corrcted some errors, optimize some parts in the code
+; V2.7 =        Initial version
+; V2.8 =        corrcted some errors, optimize some parts in the code
 
 ; A problem was existing in the BLOAD command, it was not protected from self-overwriting. 
 ; This is corrected now by adding code to compare the load address with the basic start address and prevent overwriting itself.
@@ -158,7 +158,7 @@ STRING_TO_LONG          = $17
 ; ----------------------- program start ----------------------------------------
 ;-------|---|---|-----------------------|---------------------------------------
 
-!to "build/speechbasic.prg",cbm
+!to "build/speechbasicV2.8.prg",cbm
 ; ----------------------------------------------
 ; - the basic loader ---------------------------
 ; ----------------------------------------------
@@ -168,7 +168,7 @@ STRING_TO_LONG          = $17
     !by $1E,$08,$C2,$07,$9E,$28,$32,$30 ;.....(20
     !by $38,$30,$29,$20,$53,$50,$45,$45 ;  80) SPEE
     !by $43,$48,$20,$42,$41,$53,$49,$43 ;  CH BASIC
-    !by $20,$32,$2E,$37,$00,$00,$00     ;  2.7
+    !by $20,$32,$2E,$38,$00,$00,$00     ;  2.8
 
 ; program start
         JMP OWN_INIT

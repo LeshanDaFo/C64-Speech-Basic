@@ -92,8 +92,8 @@ During creating and documenting the source-code, i found some small errors, and 
 <br />
 I have puplished 2 version.
 
-#### SpeechBasicV1.asm is the original code.<br />
-#### SpeechBasicV1.1.asm is the Version where i have corrected these errors, and did some small code optimizations.<br />
+#### SpeechBasicV2.7.asm is the original code.<br />
+#### SpeechBasicV2.8.asm is the Version where i have corrected these errors, and did some small code optimizations.<br />
 
 I have added information and comments to the source as much as possible, so that it is more easy to read and understand.<br />
 The documantation is maybe not perfect, but i'm not the author of this program.<br />

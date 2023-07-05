@@ -95,8 +95,8 @@ Beim Erstellen und Dokumentieren des Quellcodes habe ich einige kleine Fehler un
 <br />
 Ich habe 2 Versionen veröffentlicht.
 
-#### SpeechBasicV1.asm ist der Originalcode.
-#### SpeechBasicV1.1.asm ist die Version, in der ich diese Fehler korrigiert und einige kleine Codeoptimierungen vorgenommen habe.<br />
+#### SpeechBasicV2.7asm ist der Originalcode.
+#### SpeechBasicV2.8.asm ist die Version, in der ich diese Fehler korrigiert und einige kleine Codeoptimierungen vorgenommen habe.<br />
 
 Ich habe dem Quellcode so viele Informationen und Kommentare wie möglich hinzugefügt, damit er leichter lesbar und verständlich ist.<br />
 Die Dokumentation ist vielleicht nicht perfekt, aber ich bin auch nicht der Autor dieses Programms.<br />

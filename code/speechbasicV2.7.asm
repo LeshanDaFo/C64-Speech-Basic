@@ -1,7 +1,7 @@
 ; ###############################################################
 ; #                                                             #
 ; #  C64 SPEECH-BASIC C64 SOURCE CODE                           #
-; #  Version 1.0 (2023.07.04)                                   #
+; #  Version 2.7 (2023.07.04)                                   #
 ; #  Copyright (c) 2023 Claus Schlereth                         #
 ; #                                                             #
 ; #  This version of the source code is under MIT License       #
@@ -18,7 +18,7 @@
 ; ###############################################################
 ;
 ; History:
-; V1.0 =        Initial version
+; V2.7 =        Initial version
 ;
 ; A problem exists in the BLOAD command, it is not protected from self-overwriting. 
 ; BLOAD should recognize and prevent a start address smaller than its own endaddress.
@@ -150,7 +150,7 @@ STRING_TO_LONG          = $17
 ; ----------------------- program start ----------------------------------------
 ;-------|---|---|-----------------------|---------------------------------------
 
-!to "build/speechbasic.prg",cbm
+!to "build/speechbasicV2.7.prg",cbm
 ; ----------------------------------------------
 ; - the basic loader ---------------------------
 ; ----------------------------------------------
