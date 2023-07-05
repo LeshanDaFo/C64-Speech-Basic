@@ -1,0 +1,4 @@
+V1.0, V1.1  = This was the first version, they are renamed now to version V2.7, and version V2.8
+
+V2.7    =   This is the initial version, it is the same like the original from Kristian Köhntopp
+V2.8    =   This is a improved version, which has some error corrections, and code optimizations
