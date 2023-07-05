@@ -99,8 +99,7 @@ Ich habe 2 Versionen veröffentlicht.
 #### SpeechBasicV2.8.asm ist die Version, in der ich diese Fehler korrigiert und einige kleine Codeoptimierungen vorgenommen habe.<br />
 
 Ich habe dem Quellcode so viele Informationen und Kommentare wie möglich hinzugefügt, damit er leichter lesbar und verständlich ist.<br />
-Die Dokumentation ist vielleicht nicht perfekt, aber ich bin auch nicht der Autor dieses Programms.<br />
-Ich denke aber, es ist ein guter Anfang.<br />
+Die Dokumentation ist vielleicht nicht perfekt, aber ich denke aber, es ist ein guter Anfang.<br />
 
 <br />
 Anmerkungen:
