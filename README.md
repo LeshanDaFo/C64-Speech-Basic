@@ -96,8 +96,7 @@ I have puplished 2 version.
 #### SpeechBasicV2.8.asm is the Version where i have corrected these errors, and did some small code optimizations.<br />
 
 I have added information and comments to the source as much as possible, so that it is more easy to read and understand.<br />
-The documantation is maybe not perfect, but i'm not the author of this program.<br />
-I think, it is a good start.<br />
+The documantation is maybe not perfect, but I think, it is a good start.<br />
 <br />
 ### Remark:
 *)Translated from original Text, published by Markt & Technik
