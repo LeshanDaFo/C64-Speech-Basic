@@ -4,7 +4,7 @@
 
 ### A BASIC EXTENSION FOR THE C64
 
-This basic extension is original written by 
+This basic extension and the hardware is original developed by 
 Kristian Köhntopp & Daniel Diezemann for the Commodore C64.<br />
 This Basic extension provides 23 new basic functions.<br />
 <br />
@@ -12,7 +12,7 @@ This source code is based on the existing disk images<br />
 published by Markt & Technik in 1986 in the German computer magazine "64'er 86/10"
 <br />
 <br />
-At this point I would like to say a special thanks to Kristian for agreeing to publish this source code<br />
+At this point I would like to say many thanks to Kristian and Dana, for giving me the rights to the source code and the hardware circuit. So I can now publish both here on GitHub.<br />
 You can find a short story of the history about Speech Basic written by Kristian on his blog:<br />
 https://blog.koehntopp.info/2006/10/26/mut-64er-10-86.html
 <br />

@@ -4,15 +4,15 @@
 
 ### EINE BASIC ERWEITERUNG FÜR DEN C64
 
-Diese Basic-Erweiterung wurde ursprünglich von Kristian Köhntopp und Daniel Diezemann für den Commodore C64 geschrieben.<br />
+Diese Basic-Erweiterung und die Hardware wurden ursprünglich von Kristian Köhntopp und Daniel Diezemann für den Commodore C64 entwickelt.<br />
 Diese Basic-Erweiterung stellt 23 neue Befehle bereit.<br />
 <br />
 Dieser Quellcode basiert auf den vorhandenen Disk-Images,<br />
 welche 1986 bei Markt & Technik in der Computerzeitschrift „64'er 86/10“ erschienen sind.
 <br />
 <br />
-An dieser Stelle möchte ich mich ganz besonders bei Kristian für dessen Zustimmung, diesen Quellcode zu veröffentlichen, bedanken.<br />
-Eine kurze Geschichte zur Entstehung von Speech Basic, findest du in seinem Blog:<br />
+An dieser Stelle möchte ich mich ganz herzlich bei Kristian und Dana bedanken, die mir die Rechte am Quellcode und der Hardware-Schaltung überlassen haben. Somit kann ich nun beides hier auf GitHub veroeffentlichen<br />
+Eine kurze Geschichte zur Entstehung von Speech Basic, findest du in Kristian's Blog:<br />
 https://blog.koehntopp.info/2006/10/26/mut-64er-10-86.html
 <br />
 <br />
