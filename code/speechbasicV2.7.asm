@@ -36,10 +36,10 @@ CBM_CLEAR       = $A65E                 ; perform CLR
 CMD_OLDLIST     = $A6EF                 ; cont list
 CMD_PLOOP1      = $A6F3                 ; print byte
 CBM_OLDTOK      = $A724                 ; list of CBM_CMDS
-CBM_INTER       = $A7AE
+CBM_NEWSTT      = $A7AE
 CBM_EXECOLD     = $A7ED
 CBM_FUNCOLD     = $AE80
-CBM_STOPT       = $A82C                 ; basic call check STP
+CBM_ISCNTC      = $A82C                 ; basic call check STP
 CBM_LINGET      = $A96B                 ; get line number
 CBM_STROUT      = $AB1E                 ; print a string on the screen
 CBM_OUTSPC      = $AB3B                 ; print a space
@@ -116,7 +116,7 @@ CBM_TYPFLAG     = $0d
 CBM_QFLAG       = $0f                   ; quote-mode: Bit7=1 ==> quote-mode is set
 CBM_LINNUM      = $14                   ; used by LINGET
 CBM_BSTART      = $2b                   ; actual basic start
-CBM_VARPNT      = $2d                   ; start of variable, also basic end
+CBM_VARTAB      = $2d                   ; start of variable, also basic end
 CBM_MEMSIZ      = $37                   ; highest BASIC RAM address / bottom of string stack
 pnt2            = $49
 CBM_PNT         = $71
@@ -343,7 +343,7 @@ OWN_PLOOP
 OWN_GONE
         JSR CBM_CHRGET
         JSR .testcmd
-        JMP CBM_INTER
+        JMP CBM_NEWSTT                  ; go do interpreter inner loop
 .testcmd
 ---------------------------------
         CMP #$CC                        ; smaller then new commands?
@@ -937,12 +937,12 @@ CMD_HIMEM
 ---------------------------------
 +       CPX #$00                        ; if high byte was $A0, compare low byte
         BNE -                           ; error, if above $A000
-++      CMP CBM_VARPNT+1                ; compare with high byte programm end
+++      CMP CBM_VARTAB+1                ; compare with high byte programm end
         BCC -                           ; error, if less
         BEQ +                           ; if equal, go compare low byte
         JMP ++                          ; else store it as new HIMEM address
 ---------------------------------
-+       CPX CBM_VARPNT                  ; compare with progamm end
++       CPX CBM_VARTAB                  ; compare with progamm end
         BCC -                           ; do error if below
 ; store new HIMEM address
 ++      STX CBM_MEMSIZ                  ; store low byte
@@ -1518,7 +1518,7 @@ blk_loop
         
         PLA                             ; get back actual block number
         TAX                             ; transfere to X
-        JSR CBM_STOPT                   ; basic call check STP
+        JSR CBM_ISCNTC                  ; basic call check STP
         INX                             ; increment block number
         TXA                             ; put back to accu
         CMP blk_buff+1                  ; compare with end block number
@@ -2210,7 +2210,7 @@ go_on   DEC $A6                         ; decrement byte counter
         STA $0286
         LDA #$0D                        ; 'return'
         JSR CBM_CHROUT                  ; output
-        JSR CBM_STOPT                   ; basic call check STP
+        JSR CBM_ISCNTC                  ; basic call check STP
         BEQ mon_end                     ; if stop, end
         JMP mon_loop                    ; next line
 ---------------------------------
