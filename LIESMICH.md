@@ -46,13 +46,13 @@ Befehlen findest du unter:
 
 | | |
 | --- | --- |
-| ![Speech BASIC Screenshot 1](https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/e5a720d4-59c6-47f7-a286-d7bd7b8e06c7) | ![Speech BASIC Screenshot 2](https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/e5bc1f5f-b2b6-4cd0-ac3a-545b3b69063f) |
+| ![Speech BASIC Screenshot 1](assets/speech-basic-screen-1.jpg) | ![Speech BASIC Screenshot 2](assets/speech-basic-screen-2.jpg) |
 
 ### Beispiel-Screenshots eines Digitalisierers
 
 | | |
 | --- | --- |
-| ![Digitalisierer-Beispiel 1](https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/67fb171c-8fec-40c8-8c68-34f8ae4ab02e) | ![Digitalisierer-Beispiel 2](https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/1ce12357-e1bb-4ff1-b7b6-869174333874) |
+| ![Digitalisierer-Beispiel-Layout](assets/digitizer-example-layout.jpg) | ![Digitalisierer-Beispiel-Foto](assets/digitizer-example-photo.jpg) |
 
 !! Dieses Layout ist nur ein Beispiel. Wenn du planst, deinen eigenen
 Digitalisierer zu bauen, solltest du den Beschreibungen in den entsprechenden

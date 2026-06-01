@@ -48,13 +48,13 @@ commands can be found at:
 
 | |                                                                                                                                   |
 | --- |-----------------------------------------------------------------------------------------------------------------------------------|
-| ![Speech BASIC screenshot 1](https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/e5a720d4-59c6-47f7-a286-d7bd7b8e06c7) | ![Speech BASIC screenshot 2](https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/e5bc1f5f-b2b6-4cd0-ac3a-545b3b69063f) |
+| ![Speech BASIC screenshot 1](assets/speech-basic-screen-1.jpg) | ![Speech BASIC screenshot 2](assets/speech-basic-screen-2.jpg) |
 
 ### Digitizer example Screenshots
 
 | |                                                                                                                             |
 | --- |-----------------------------------------------------------------------------------------------------------------------------|
-| ![Digitizer example 1](https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/67fb171c-8fec-40c8-8c68-34f8ae4ab02e) | ![Digitizer example 2](https://github.com/LeshanDaFo/C64-Speech-Basic/assets/97148663/1ce12357-e1bb-4ff1-b7b6-869174333874) |
+| ![Digitizer example layout](assets/digitizer-example-layout.jpg) | ![Digitizer example photo](assets/digitizer-example-photo.jpg) |
 
 !! This layout is just an example. If you plan to build your own digitizer, you
 should follow the descriptions in the relevant documents. !!
