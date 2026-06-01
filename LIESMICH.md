@@ -17,12 +17,13 @@ Somit kann ich nun beides hier auf GitHub veroeffentlichen.
 Eine kurze Geschichte zur Entstehung von Speech Basic, findest du in Kristian's
 Blog:
 
-https://blog.koehntopp.info/2006/10/26/mut-64er-10-86.html
+[MuT 64er 10/86](https://blog.koehntopp.info/2006/10/26/mut-64er-10-86.html)
 
-„Speech-Basic besteht aus einer kleinen Schaltung, nämlich einem
+> Speech-Basic besteht aus einer kleinen Schaltung, nämlich einem
 2-Bit-Tondigitalisierer und einer 4 KByte langen Basic-Erweiterung. Beides
 zusammen ermöglicht das einfache und komfortable Arbeiten mit Sprache und Musik
-am Commodore 64. *)
+am Commodore 64.
+>   -- Auszug aus der Zeitschrifft 64'er 86/10 von Markt & Technik
 
 ### Liste der Befehle nach Gruppe
 
@@ -82,7 +83,3 @@ hinzugefügt, damit er leichter lesbar und verständlich ist.
 
 Die Dokumentation ist vielleicht nicht perfekt, aber ich denke aber, es ist ein
 guter Anfang.
-
-### Anmerkungen
-
-*)Auszug aus der Zeitschrifft 64'er 86/10 von Markt & Technik
