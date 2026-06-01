@@ -353,3 +353,177 @@ To understand the program efficiently, read in this order:
 - The v2.8 fixes are part of the source's intent: device checking in
   `chkparam`, safer `BLOAD` destination validation in `L0F45`, and the corrected
   `PAUSE` timer comparison.
+
+# Fixes
+
+This section compares `code/speechbasicV2.7.asm` with
+`code/speechbasicV2.8.asm`. Version 2.8 keeps the same overall structure and
+command set, but adds three functional fixes and a few small cleanups.
+
+## Version and Build Output
+
+The version identifiers were updated from 2.7 to 2.8:
+
+- The file header now says `Version 2.8`.
+- The assembler output target changed from `build/speechbasicV2.7.prg` to
+  `build/speechbasicV2.8.prg`.
+- The BASIC loader text and power-on message now show `2.8`.
+- The comment header now documents the v2.8 fixes.
+
+These changes identify the new build but do not change runtime behavior by
+themselves.
+
+## `BLOAD` Self-Overwrite Protection
+
+In v2.7, `BLOAD` could load data below the relocated BASIC start address and
+overwrite the resident Speech BASIC program area. The v2.7 comments already
+noted this as a known problem.
+
+Version 2.8 fixes this in `L0F45`, after `set_def_val` has resolved the load
+start address in `DATA_START`:
+
+- It compares the high byte of the requested start address with `$18`.
+- If the start address is below `$1801`, it closes the file and raises
+  `ILLEGAL QUANTITY`.
+- If the high byte is exactly `$18`, it also checks that the low byte is at
+  least `$01`.
+- Only addresses at or above `$1801` are copied into `$AE/$AF` as the active
+  load/save pointer.
+
+This protects the extension area below the new BASIC program start from being
+overwritten by `BLOAD`.
+
+One detail to watch: `L0F45` is shared by `BLOAD` and `BSAVE`. In v2.8 this
+address validation therefore applies to both paths using that helper, although
+the documented bug being fixed is the unsafe `BLOAD` destination.
+
+## Device-Present Check in `chkparam`
+
+In v2.7, `chkparam` accepted device numbers `8` and above, stored the value in
+`CBM_CURDEV`, and returned. It did not check whether the device actually existed.
+For commands that open disk files or channels, an absent device could leave the
+machine waiting indefinitely.
+
+Version 2.8 adds KERNAL IEEE calls and a device error code:
+
+- `CBM_LISTN = $FFB1`
+- `CBM_UNLSN = $FFAE`
+- `DEVICE_NOT_PRESENT = $05`
+
+After validating and storing the device number, `chkparam` now:
+
+1. Clears `CBM_STATUS`.
+2. Sends `LISTEN` to the selected device with `CBM_LISTN`.
+3. Sends `UNLISTEN` with `CBM_UNLSN`.
+4. Checks `CBM_STATUS`.
+5. If bit 7 is set, closes the active file/channel path and raises
+   `DEVICE NOT PRESENT`.
+
+The old illegal-device-number path remains for values below 8. The new path
+distinguishes between an invalid device number and a valid-looking device number
+where no drive responds.
+
+This affects the shared disk parameter parser used by `DISK`, `DIR`, `BLOAD`,
+and `BSAVE`.
+
+## `PAUSE` Timer Race Fix
+
+`CMD_PAUSE` with a numeric argument installs `OWN_IRQ`, which decrements the
+two-byte `timer` value on each IRQ while the foreground code waits for the value
+to reach zero.
+
+In v2.7, the wait loop checked the low byte first:
+
+```asm
+LDA timer
+BNE -
+LDA timer+1
+BNE -
+```
+
+That created a race: the IRQ could decrement the high byte between the low-byte
+check and high-byte check. If that happened near a low-byte wrap, the foreground
+wait could skip a full low-byte count.
+
+Version 2.8 checks the high byte first:
+
+```asm
+LDA timer+1
+BNE -
+LDA timer
+BNE -
+```
+
+This avoids the observed case where `PAUSE` could skip 255 counts from the wait
+value.
+
+## `HELP` Cleanup and Spacing Optimization
+
+The `CMD_HELP` path for showing normal BASIC commands was cleaned up.
+
+In v2.7, it consumed only one extra character after `HELP`, with comments noting
+that this only worked for one trailing character and that a loop would work
+better. Version 2.8 implements that loop:
+
+```asm
+.loop1
+    JSR CBM_CHRGET
+    BNE .loop1
+```
+
+This clears all remaining trailing input before printing the normal BASIC
+command overview.
+
+The command-column spacing logic was also simplified. Instead of calling
+`CBM_JPLOT` to read the cursor position, v2.8 reads `$D3` directly. This is a
+small optimization for the same purpose: calculate how many spaces are needed to
+align the command list.
+
+## Disk Command Cleanup
+
+`CMD_DISK` no longer calls `CBM_SETNAM` before `chkparam`. The source comment
+explains why: setting the filename there is unnecessary because `chkparam`
+already calls the ROM filename setup routine.
+
+This is a cleanup, not a command behavior change.
+
+## Shared Address Helper Cleanup
+
+An apparently unused instruction at label `L0F2C`:
+
+```asm
+L0F2C JSR CBM_CHKCOM
+```
+
+was commented out in v2.8. The nearby comment already says `$0f2c is not used
+anywhere ?`.
+
+The illegal-quantity jump in `GETADDR` was also given the local label
+`.error1`, which is reused by the new `BLOAD` address validation path.
+
+## `BSAVE` Close-Path Cleanup
+
+In `CMD_BSAVE`, v2.7 called `CBM_CLRCHN` immediately before jumping to `.close`
+on output status error. Since `.close` also restores channels before closing the
+file, v2.8 comments out the duplicate `CBM_CLRCHN`.
+
+This removes repeated cleanup work on the error path.
+
+## `out_4` Optimization
+
+In v2.7, `out_4` called `out_1` three times and then jumped to `out_1` for the
+fourth sample:
+
+```asm
+out_4
+    JSR out_1
+    JSR out_1
+    JSR out_1
+    JMP out_1
+```
+
+In v2.8, the final jump is commented out. Because `out_4` falls through directly
+into `out_1`, the fourth call still happens without needing the explicit
+`JMP`.
+
+This is a small size/speed optimization that preserves behavior.
